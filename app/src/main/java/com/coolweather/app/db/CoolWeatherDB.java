@@ -113,7 +113,7 @@ public class CoolWeatherDB {
             } while (cursor.moveToNext());
         }
         if (cursor != null) {
-            cursor.isClosed();
+            cursor.close();
         }
         return list;
     }
@@ -149,7 +149,7 @@ public class CoolWeatherDB {
             } while (cursor.moveToNext());
         }
         if (cursor != null) {
-            cursor.isClosed();
+            cursor.close();
         }
         return list;
     }
