@@ -64,7 +64,7 @@ public class ChooseAreaActivity extends Activity {
     private int currentLevel;
 
     @Override
-    protected void OnCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.choose_area);
@@ -80,9 +80,10 @@ public class ChooseAreaActivity extends Activity {
                     selectedProvince = provinceList.get(index);
                     queryCities();
                 }
-                else if (currentLevel == LEVEL_CITY) {}
-                selectedCity = cityList.get(index);
-                queryCounties();
+                else if (currentLevel == LEVEL_CITY) {
+                    selectedCity = cityList.get(index);
+                    queryCounties();
+                }
             }
         });
         queryProvinces(); /* 加载省级数据 */
